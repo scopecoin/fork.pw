@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light static-top bg-light">
-    <div class="container" style="max-width: 90%;">
+    <div class="container-fluid">
         <a class="navbar-brand" href="/">
             <img  height="30" border="0" align="center"  src="/anchor.png"/>
         </a>
@@ -22,8 +22,8 @@
             <% if (key.length) {%><%  include ../partials/nav_logged %><% }%>
         </ul>
         
-        <button type="button" id='id-button-lang-en' class="btn btn-outline-success btn-sm m-1 lang-btn">EN</button>
-        <button type="button" id='id-button-lang-ru' class="btn btn-outline-success btn-sm lang-btn">RU</button>
+        <button type="button" id='id-button-lang-en' class="btn btn-outline-info btn-sm m-1 lang-btn">EN</button>
+        <button type="button" id='id-button-lang-ru' class="btn btn-outline-info btn-sm lang-btn">RU</button>
     </div>
 </nav>
     <div id="loader" style="display:none;"></div>
@@ -31,15 +31,16 @@
 
     <% var message = ""; 
         if (!share.tradeEnabled || !share.withdrawEnabled) {
+        <!-- if (1) { -->
           message = 
-            '<div class="container pt-2">'+
-              '<div id="alert-fail" class="alert alert-danger alert-dismissible col-md-12" role="alert" >'+
-                '<div id="fail-message">Technical work is carried out. Please be patient. <b>Trading enabled</b>. Withdraw is temporarily disabled</div>'+
+            '<div class="container-fluid pt-2"><div class="col-md-12 text-right">'+
+              '<div id="alert-fail" style="display: inline-block" class="my-2 alert alert-danger alert-dismissible" role="alert" >'+
+                '<div id="fail-message" data-tech-works>Technical work is carried out. Please be patient. Trading enabled. Withdraw is temporarily disabled</div>'+
                 '<button id="close_fail" type="button" class="close"  aria-label="Close">'+
                   '<span aria-hidden="true">&times;</span>'+
                 '</button>'+
               '</div>'+
-            '</div>'
+            '</div></div>'
         }
     %>
     <!--<div class="container pt-2">

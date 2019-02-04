@@ -268,7 +268,7 @@ function ShowWithdrawDialog(coin, coinID, coinTicker)
           ));
 
     modals.OKCancel(
-        'Withdraw your '+coin, tabs, result => {
+        $("#withdraw-your-text").html() + ' '+coin, tabs, result => {
           if (result == 'cancel')
             return;
             

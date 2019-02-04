@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawChart);
 }
 catch(e)
 {
-  
+    console.error(e)
 }
 
 let g_LB_Data = {};
@@ -38,7 +38,7 @@ function UpdateMCFromLB()
   const coinNameToTicker = cntObject.value;
 
   const MC_price = storage.getItem("MC_BTC_Price");
-  const g_MC_BTC_Price = (MC_price == null || !MC_price.value) ? 1000000 : MC_price.value;
+  let g_MC_BTC_Price = (MC_price == null || !MC_price.value) ? 1000000 : MC_price.value;
   
   const MC = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'MC' : 'MC';
   
@@ -195,15 +195,17 @@ function drawChart(chartData)
         },*/
         //width: 800,
         legend: 'none',
-        colors: ['blue'],
-        //vAxis: {viewWindow: {min: vAxisMin} },
+        colors: ['red'],
+        // vAxis: {viewWindow: {min: vAxisMin} },
         /*explorer: {
                 axis: 'horizontal',
                 keepInBounds: true,
                 maxZoomIn: 4.0
         },*/
         seriesType: 'candlesticks',
-        series: {0: {type: 'bars', targetAxisIndex: 1, color: '#eaeaea'}}
+        series: {0: {type: 'bars', targetAxisIndex: 1, color: '#eaeaea'}},
+        backgroundColor: "#222",
+        is3D: true
     };
     
     var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
@@ -261,11 +263,11 @@ function SetChartLegend()
     const button1000 = $('<button type="button" class="btn btn-outline-dark btn-sm"><small>1M</small></button>').on('click', e => {storage.setItem('ChartPeriod', 1000); location.reload();});
     const button6000 = $('<button type="button" class="btn btn-outline-dark btn-sm"><small>6M</small></button>').on('click', e => {storage.setItem('ChartPeriod', 6000); location.reload();});
     
-    const buttons = $('<nav class="nav nav-pills"></nav>')
-      .append($('<li class="nav-item"></li>').append(button24))
-      .append($('<li class="nav-item"></li>').append(button250))
-      .append($('<li class="nav-item"></li>').append(button1000))
-      .append($('<li class="nav-item"></li>').append(button6000));
+    const buttons = $('<nav class="nav nav-pills my-3"></nav>')
+      .append($('<li class="nav-item m-1"></li>').append(button24))
+      .append($('<li class="nav-item m-1"></li>').append(button250))
+      .append($('<li class="nav-item m-1"></li>').append(button1000))
+      .append($('<li class="nav-item m-1"></li>').append(button6000));
       
     $('#chart_legend').append(buttons);
   });
@@ -276,8 +278,8 @@ function AddCoinInfo(info)
   if (!info.result || !info.result.coin_info || !info.result.coin_info.page)
     return;
     
-  $('#coin_legend').text(g_CurrentPair);
+  // $('#coin_legend').text(g_CurrentPair);
   
-  const p1 = $('<p><strong>Forum</strong> ANN: <a target="_blank" href="'+(info.result.coin_info.page || "")+'">'+g_CurrentPair+' @ bitcointalk</a></p>');
-  $('#coin_info').empty().append(p1);
+  // const p1 = $('<p><strong>Forum</strong> ANN: <a target="_blank" href="'+(info.result.coin_info.page || "")+'">'+g_CurrentPair+' @ bitcointalk</a></p>');
+  // $('#coin_info').empty().append(p1);
 }

@@ -4,9 +4,9 @@ const SUPPORT_EMAIL = 'support@email.com';
 const NOREPLY_EMAIL = 'no-reply@email.com';
 const DOMAIN = 'localhost';
 
-const MAILER_NAME = 'PortoForko Mailer';
-const START_MESSAGE = 'PortoForko started!';
-const OPENTRADE = "PortoForko";
+const MAILER_NAME = 'ForkoFranko Mailer';
+const START_MESSAGE = 'ForkoFranko started!';
+const OPENTRADE = "ForkoFranko";
 
 exports.ALLOW_EMAIL_CHANGING = true;
 
@@ -25,6 +25,10 @@ exports.share = {
    TRADE_MAIN_COIN: "Bitcoin",
    TRADE_MAIN_COIN_TICKER: "BTC",
    TRADE_DEFAULT_PAIR: "ScopeCoin"
+ 
+    // TRADE_MAIN_COIN: "ScopeCoin",
+    // TRADE_MAIN_COIN_TICKER: "XSCP",
+    // TRADE_DEFAULT_PAIR: "Bitcoin"
 };
 
 exports.SESSION_TIME = 3600*1000; //one hour
@@ -221,7 +225,7 @@ exports.dbIndexes = [
   },
 ];
 
-const DashForks = ['DASH', 'WAVI'];
+const DashForks = ['DASH', 'WAVI', 'XSCP'];
 
 exports.DEBUG_MODE = process.env.PORT ? true : false;
 exports.WEB_SOCKETS = null;

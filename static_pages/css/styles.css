@@ -44,16 +44,13 @@ pre {
     margin-right: 4px;
 }
 
-.container {
-    max-width: 100%;
-}
 .d-flex-chat {
   overflow-y:auto;
 }
 .d-flex-market {
   overflow-x:auto;
   overflow-y:auto;
-  height: 420px;
+  height: 320px;
 }
 
 .my-info {
@@ -71,8 +68,9 @@ pre {
 .div-orders {
   overflow-y:auto;
   overflow-x:auto;
-  min-height: 400px;
-  max-height: 400px;
+  height: 368px;
+  /* min-height: 400px; */
+  /* max-height: 400px; */
 }
 
 .bd-highlight {
@@ -483,7 +481,6 @@ pre {
 
 #chat_message {
 	background-color: rgba(230,230,230,.15);
-	margin: 0 1vh;
 	border-radius: 3px;
 	color: whitesmoke;
 }
@@ -506,7 +503,8 @@ pre {
   }
 
   #id_chat_header {
-	  font-size: 10px
+	  font-size: 10px;
+	  text-align: right;
   }
 
   .logo-text {

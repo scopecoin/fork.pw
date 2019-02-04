@@ -42,8 +42,8 @@ exports.object = {
         'Fees' : ['Fees', 'Комиссии'],
         'Admin Area': ['Admin Area', 'Админка'],
         'Submit': ['Submit', 'Отправить'],
-        'Highest Ask': ['Highest Ask', 'Высочайший запрос'],
-        'Highest Bid': ['Highest Bid', 'Лучшее предложение'],
+        'Highest Ask': ['Highest Ask', 'Запрос'],
+        'Highest Bid': ['Highest Bid', 'Предложение'],
         'Login' : ['Login', 'Вход'],
         'Your active orders' : ['Your active orders', 'Ваши активные заявки'],
         'Your history' : ['Your history', 'Ваши исполненные заявки'],
@@ -99,6 +99,10 @@ exports.object = {
         "All cryptocurrencies have a 0.0% commission": ["All cryptocurrencies have a 0.0% commission", "Все монеты имеют 0% комиссии"],
         "Deposit Commission": ["Deposit Commission", "Комиссия на ввод"],
         "All trades have a 0.1% commission": ["All trades have a 0.1% commission", "Все сделки совершаются с комиссией 0.1%"],
-        "Trading Commission": ["Trading Commission", "Торговая комиссия"]
+        "Trading Commission": ["Trading Commission", "Торговая комиссия"],
+        "Withdraw your": ["Withdraw your", "Вывод ваших"],
+        "Technical work is carried out. Please be patient. Trading enabled. Withdraw is temporarily disabled":
+        ["Technical work is carried out. Please be patient. Trading enabled. Withdraw is temporarily disabled",
+        "Проводятся технические работы. Торговля разрешена. Вывод средств временно приостановлен"]
     }
 };
