@@ -4,4 +4,4 @@
 
 [https://fork.pw](https://fork.pw)
 
-![ForkoFranko screenshot](./asset/screenshot.png)
+![ForkoFranko screenshot](./assets/screenshot.png)
