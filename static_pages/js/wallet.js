@@ -89,9 +89,9 @@ function UpdateWallet(data)
     const icon = '<img src="'+unescape(data.coin.icon)+'" width=40 />';
     let tdCoin = '';
      if (data.coin.ticker == MC) {
-        tdCoin = $('<td scope="col" class="align-middle"> '+icon+unescape(data.coin.name)+'</td>');
+        tdCoin = $('<td scope="col" class="align-middle">'+icon+'<span class="wallet-coin">'+unescape(data.coin.name)+'</span></td>');
     } else {
-	    tdCoin = $('<td scope="col" class="align-middle"> <a href="/market/'+MC+'-'+data.coin.ticker+'">'+icon+unescape(data.coin.name)+'</a></td>');
+	    tdCoin = $('<td scope="col" class="align-middle"><a href="/market/'+MC+'-'+data.coin.ticker+'">'+icon+'<span class="wallet-coin">'+unescape(data.coin.name)+'</span></a></td>');
     }
 //    const tdBalance = $('<td id="'+id_balance+'" scope="col" class="align-middle">'+(data.balance*1).toFixed(8)*1+" "+data.coin.ticker+'</td>');
     const tdBalance = $('<td id="'+id_balance+'" scope="col" class="align-middle"></td>').append(balanceLink);
@@ -111,11 +111,11 @@ function CreateDepositArea(data)
 {
   const coin = unescape(data.coin.name);
   const coinID = data.coin.id;
-  const btnDeposit = $('<button class="btn btn-secondary m-1 align-middle" type="button">Deposit</button>')
+  const btnDeposit = $('<button class="btn btn-secondary m-1 align-middle" type="button">' + $("#deposit-text").html() + '</button>')
     .on('click', e => { ShowDepositAddress(coin) });
-  const btnWithdraw = $('<button class="btn btn-secondary m-1 align-middle" type="button">Withdraw</button>')
+  const btnWithdraw = $('<button class="btn btn-secondary m-1 align-middle" type="button">' + $("#withdraw-text").html() +'</button>')
     .on('click', e => { ShowWithdrawDialog(coin, data.coin.id, data.coin.ticker) });
-  const btnHistory = $('<button class="btn btn-secondary m-1 align-middle" type="button">History</button>')
+  const btnHistory = $('<button class="btn btn-secondary m-1 align-middle" type="button">' + $("#history-text").html() + '</button>')
     .on('click', e => { ShowHistoryDialog(coin, data.coin.id, data) });
 
   return $('<td scope="col"></td>').append(btnDeposit).append(btnWithdraw).append(btnHistory);

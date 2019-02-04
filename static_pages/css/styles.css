@@ -514,3 +514,12 @@ pre {
 	  font-variant: small-caps;
 	  font-size: 16px;
   }
+
+  .lang-btn {
+	  margin: 5px;
+  }
+
+  .wallet-coin {
+	margin-left: 15px;
+	display: inline-block;
+	}
