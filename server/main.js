@@ -88,6 +88,8 @@ setInterval(function ping() {
 }, 30000);
  
 app.use(express.static('../static_pages'));
+app.use(express.static("../bower_components"))
+app.use(express.static("../assets"))
 app.set('view engine', 'ejs');
 
 //require('./reqHandler.js').handle(app, g_constants.WEB_SOCKETS);

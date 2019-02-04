@@ -23,10 +23,10 @@
                     <thead>
                       <tr>
                         <th scope="col"></th>
-                        <th scope="col">Coin</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Vol</th>
-                        <th scope="col">Ch (%)</th>
+                        <th scope="col"><%-__("Coin")%></th>
+                        <th scope="col"><%-__("Price")%></th>
+                        <th scope="col"><%-__("Volume")%></th>
+                        <th scope="col"><%-__("Change")%> %</th>
                       </tr>
                     </thead>
                     <tbody id='table-market'>
@@ -53,8 +53,6 @@
               Chat
             </div>
             <div class="card-body p-0">
-              <button id='id_btn_chat_ru' type="button" class="btn btn-outline-primary btn-sm">Ru</button>
-              <button id='id_btn_chat_en' type="button" class="btn btn-outline-primary btn-sm">En</button>
               <div id='chat-flex' class="d-flex d-flex-chat align-items-start bd-highlight mb-0" style="height: 350px">
                 <div id='chat-container_loading' class='container'>
                   <div class='row'><div class='col-md-12'>Loading...</div></div>
@@ -64,10 +62,10 @@
                 <div id='chat-container_en' class='container font_14'>
                 </div>
               </div>
-              <div class="input-group">
+              <div class="input-group p-1">
                 <input id='chat_message' type="text" class="form-control" maxlength="150">
                 <span class="input-group-btn">
-                  <button id='button_chat' class="btn btn-secondary" type="button">Submit</button>
+                  <button id='button_chat' class="btn btn-secondary" type="button"><%-__('Submit')%></button>
                 </span>
               </div>
             </div>
@@ -88,7 +86,7 @@
                     <div class='col-md-6'>
                       <table>
                         <thead>
-                          <tr><th><%-__('Your balance:')%></th></tr>
+                          <tr><th><%-__('Your balance')%>:</th></tr>
                         </thead>
                         <tbody>
                           <tr>
@@ -113,7 +111,7 @@
                     <div class='col-md-6'>
                       <table>
                         <thead>
-                          <tr><th>Highest Ask:</th></tr>
+                          <tr><th><%-__('Highest Ask')%>:</th></tr>
                         </thead>
                         <tbody>
                           <tr><td id='id_max_ask'></td></tr>
@@ -126,28 +124,28 @@
               </div>
               <form id="form_buy" class="p-3">
                 <div class="form-group row">
-                  <label for="inputBuyAmount" class="col-md-4 col-form-label form-control-sm">Amount:</label>
+                  <label for="inputBuyAmount" class="col-md-4 col-form-label form-control-sm"><%-__('Amount')%>:</label>
                   <div class="col-md-8">
                     <input type="text" class="form-control" id="inputBuyAmount" placeholder="0.0" aria-describedby="id_amount_buy" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                     <span class="currency" id="id_amount_buy"></span>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputBuyPrice" class="col-md-4 col-form-label form-control-sm">Price:</label>
+                  <label for="inputBuyPrice" class="col-md-4 col-form-label form-control-sm"><%-__('Price')%>:</label>
                   <div class="col-md-8">
                     <input type="text" class="form-control" id="inputBuyPrice" placeholder="0.0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                     <span class="currency" id="id_price_buy"></span>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputBuyComission" class="col-md-4 col-form-label form-control-sm">Comission:</label>
+                  <label for="inputBuyComission" class="col-md-4 col-form-label form-control-sm"><%-__('Comission')%>:</label>
                   <div class="col-md-8">
                     <input type="text" class="form-control" id="inputBuyComission" readonly placeholder="0.0">
                     <span class="currency" id="id_comission_buy"></span>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="inputBuyTotal" class="col-md-4 col-form-label form-control-sm">Total:</label>
+                  <label for="inputBuyTotal" class="col-md-4 col-form-label form-control-sm"><%-__('Total')%>:</label>
                   <div class="col-md-8">
                     <input type="text" class="form-control" id="inputBuyTotal" placeholder="0.0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                     <span class="currency" id="id_total_buy"></span>
@@ -171,7 +169,7 @@
                           <div class='col-md-6'>
                             <table>
                               <thead>
-                                <tr><th><%-__('Your balance:')%></th></tr>
+                                <tr><th><%-__('Your balance')%>:</th></tr>
                               </thead>
                               <tbody>
                                 <tr>
@@ -196,7 +194,7 @@
                           <div class='col-md-6'>
                             <table>
                               <thead>
-                                <tr><th>Highest Bid:</th></tr>
+                                <tr><th><%-__('Highest Bid')%>:</th></tr>
                               </thead>
                               <tbody>
                                 <tr><td id='id_max_bid'></td></tr>
@@ -209,28 +207,28 @@
                     </div>
                       <form id="form_sell" class="p-3">
                         <div class="form-group row">
-                          <label for="inputSellAmount" class="col-md-4 col-form-label form-control-sm">Amount:</label>
+                          <label for="inputSellAmount" class="col-md-4 col-form-label form-control-sm"><%-__('Amount')%>:</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" id="inputSellAmount" placeholder="0.0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                             <span class="currency" id="id_amount_sell"></span>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputSellPrice" class="col-md-4 col-form-label form-control-sm">Price:</label>
+                          <label for="inputSellPrice" class="col-md-4 col-form-label form-control-sm"><%-__('Price')%>:</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" id="inputSellPrice" placeholder="0.0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                             <span class="currency" id="id_price_sell"></span>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputSEllComission" class="col-md-4 col-form-label form-control-sm">Comission:</label>
+                          <label for="inputSEllComission" class="col-md-4 col-form-label form-control-sm"><%-__('Comission')%>:</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" id="inputSellComission" readonly placeholder="0.0">
                             <span class="currency" id="id_comission_sell"></span>
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label for="inputSellTotal" class="col-md-4 col-form-label form-control-sm">Total:</label>
+                          <label for="inputSellTotal" class="col-md-4 col-form-label form-control-sm"><%-__('Total')%>:</label>
                           <div class="col-md-8">
                             <input type="text" class="form-control" id="inputSellTotal" placeholder="0.0" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46 || event.charCode == 0 ">
                             <span class="currency" id="id_total_sell"></span>
@@ -261,10 +259,10 @@
                   <table class="table table-striped table-sm">
                     <thead>
                       <tr>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Price</th>
+                        <th><%-__("Time")%></th>
+                        <th><%-__("Type")%></th>
+                        <th><%-__("Amount")%></th>
+                        <th><%-__("Price")%></th>
                         <th></th>
                       </tr>
                     </thead>
@@ -276,10 +274,10 @@
                   <table class="table table-striped table-sm">
                     <thead>
                       <tr>
-                        <th>Time</th>
-                        <th>Type</th>
-                        <th>Amount</th>
-                        <th>Price</th>
+                        <th><%-__("Time")%></th>
+                        <th><%-__("Type")%></th>
+                        <th><%-__("Amount")%></th>
+                        <th><%-__("Price")%></th>
                         <th></th>
                       </tr>
                     </thead>
@@ -298,7 +296,7 @@
               <div class="card-header p-0">
                 <table class='table table-orders m-0'>
                   <tr>
-                    <td><strong>Sell orders</strong></td>
+                    <td><strong><%-__("Sell orders")%></strong></td>
                    <td class='form_title_volume' align="right">Volume:<span id='id_sell_volume'></span></td>
                   </tr>
                 </table>
@@ -321,8 +319,8 @@
               <div class="card-header p-0">
                 <table class='table table-orders m-0'>
                   <tr>
-                    <td><strong>Buy orders</strong></td>
-                   <td class='form_title_volume' align="right">Volume:<span id='id_buy_volume'></span></td>
+                    <td><strong><%-__("Buy orders")%></strong></td>
+                   <td class='form_title_volume' align="right"><%-__("Volume")%>:<span id='id_buy_volume'></span></td>
                   </tr>
                 </table>
                 
@@ -357,10 +355,10 @@
                 <table class="table table-striped table-sm table-orders">
                   <thead>
                     <tr>
-                      <th>Time</th>
-                      <th>Type</th>
-                      <th>Volume</th>
-                      <th>Price</th>
+                      <th><%-__("Time")%></th>
+                      <th><%-__("Type")%></th>
+                      <th><%-__("Volume")%></th>
+                      <th><%-__("Price")%></th>
                       <th></th>
                     </tr>
                   </thead>
@@ -374,6 +372,18 @@
 
     </div> <!-- /container -->
 
+    <div style="display: none">
+      <span id="sell-text"><%-__("Sell")%></span>
+      <span id="buy-text"><%-__("Buy")%></span>
+      <span id="price-text"><%-__("Price")%></span>
+      <span id="chat-text"><%-__("Chat")%></span>
+      <span id="online-text"><%-__("Online")%></span>
+      <span id="registered-text"><%-__("Registered")%></span>
+      <span id="close-text"><%-__("Close")%></span>
+      <span id="selling-text"><%-__("Selling")%></span>
+      <span id="buying-text"><%-__("Buying")%></span>
+
+    </div>
 
     <% include ../partials/footer %>
     <script src='/js/index.js'></script>

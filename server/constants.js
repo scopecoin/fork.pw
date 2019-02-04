@@ -4,9 +4,9 @@ const SUPPORT_EMAIL = 'support@email.com';
 const NOREPLY_EMAIL = 'no-reply@email.com';
 const DOMAIN = 'localhost';
 
-const MAILER_NAME = 'OpenTrade Mailer';
-const START_MESSAGE = 'OpenTrade started!';
-const OPENTRADE = "OpenTrade";
+const MAILER_NAME = 'PortoForko Mailer';
+const START_MESSAGE = 'PortoForko started!';
+const OPENTRADE = "PortoForko";
 
 exports.ALLOW_EMAIL_CHANGING = true;
 
@@ -16,15 +16,15 @@ exports.share = {
    tradeEnabled: true,
    withdrawEnabled: true,
    recaptchaEnabled: false,
-   emailVerificationEnabled: 'enabled', //'disabled' // !!! WARNING !!! DANGER !!! DO NOT CHANGE IT IN PRODUCTION !!! FOR TESTS ONLY !!!
-   pinVerificationEnabled: 'enabled', //'disabled'
+   emailVerificationEnabled: 'disabled', //'disabled' // !!! WARNING !!! DANGER !!! DO NOT CHANGE IT IN PRODUCTION !!! FOR TESTS ONLY !!!
+   pinVerificationEnabled: 'disabled', //'disabled'
    
    TRADE_COMISSION: 0.001, //change trade comission percent
    DUST_VOLUME: 0.000001, //change minimal order volume
    
-   TRADE_MAIN_COIN: "Marycoin",
-   TRADE_MAIN_COIN_TICKER: "MC",
-   TRADE_DEFAULT_PAIR: "Litecoin"
+   TRADE_MAIN_COIN: "Bitcoin",
+   TRADE_MAIN_COIN_TICKER: "BTC",
+   TRADE_DEFAULT_PAIR: "ScopeCoin"
 };
 
 exports.SESSION_TIME = 3600*1000; //one hour
@@ -34,7 +34,7 @@ const MAX_IP_CONNECTIONS = 100;
 
 const MAX_USER_WITHDRAW = 100; //Percentage from trade deposit
 
-const DATABASE_PATH = '/root/opentrade/server/database/sqlite.db';
+const DATABASE_PATH = '/Users/michael/Documents/Projects/XSCP/fork.pw/data/sqlite.db';
 const PRIVATE_CONSTANTS_PATH = "./modules/private_constants";
 
 exports.dbTables = [
@@ -244,8 +244,8 @@ exports.MAX_USER_WITHDRAW = PRIVATE.MAX_USER_WITHDRAW || MAX_USER_WITHDRAW;
 exports.OPENTRADE = PRIVATE.OPENTRADE || OPENTRADE;
 exports.DOMAIN = PRIVATE.DOMAIN || DOMAIN;
 
-exports.share["my_portSSL"] = PRIVATE.SSL_PORT || 443;
-exports.my_port = PRIVATE.PORT || 80;
+exports.share["my_portSSL"] = PRIVATE.SSL_PORT || 1443;
+exports.my_port = PRIVATE.PORT || 1080;
 
 exports.PORT_DB = PRIVATE.SSL_PORTDB || 40543;
 

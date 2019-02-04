@@ -480,3 +480,37 @@ pre {
     top: 7px;
     color: #9aa8b9;
 }
+
+#chat_message {
+	background-color: rgba(230,230,230,.15);
+	margin: 0 1vh;
+	border-radius: 3px;
+	color: whitesmoke;
+}
+
+.table-orders th {
+	font-weight: 100;
+	font-size: 9px;
+}
+
+@font-face {
+	font-family: system;
+	font-style: normal;
+	font-weight: 300;
+	src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  }
+  
+  /* Now, let's apply it on an element */
+  body {
+	font-family: "system";
+  }
+
+  #id_chat_header {
+	  font-size: 10px
+  }
+
+  .logo-text {
+	  color: rgba(255, 255, 255, .5) !important;
+	  font-variant: small-caps;
+	  font-size: 16px;
+  }

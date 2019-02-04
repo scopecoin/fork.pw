@@ -11,6 +11,12 @@ var coinTickerToName = {};
 
 var g_role = 'User';
 
+const sellText = $("#sell-text").html(),
+  buyText = $("#buy-text").html(),
+  sellingText = $("#selling-text").html(),
+  buyingText = $("#buying-text").html(),
+  closeText = $("#close-text").html()
+
 function UpdatePageWithRole()
 {
   if (!g_role || g_role == 'User')
@@ -74,8 +80,8 @@ $('#inputSellTotal').change(e => {
 });
 function UpdateBuySellText()
 {
-  $('#header_sell').text('Sell '+g_CurrentPair);
-  $('#header_buy').text('Buy '+g_CurrentPair);
+  $('#header_sell').text(sellText + ' '+g_CurrentPair);
+  $('#header_buy').text(buyText + ' '+g_CurrentPair);
   
   const token = $('#id_token').val();
   if (!token || !token.length)
@@ -385,8 +391,9 @@ function UpdateMarket(message)
 
   if (!$('#id_buy_orders_header_price').length)
   {
-    $('#id_buy_orders_header').append($('<th id="id_buy_orders_header_price">Price</th><th>'+coinNameToTicker[utils.MAIN_COIN].ticker+'</th><th>'+coinNameToTicker[g_CurrentPair].ticker+'</th>'))
-    $('#id_sell_orders_header').append($('<th>Price</th><th>'+coinNameToTicker[utils.MAIN_COIN].ticker+'</th><th>'+coinNameToTicker[g_CurrentPair].ticker+'</th>'))
+    const price = $("#price-text").html()
+    $('#id_buy_orders_header').append($('<th id="id_buy_orders_header_price">' + price + '</th><th>'+coinNameToTicker[utils.MAIN_COIN].ticker+'</th><th>'+coinNameToTicker[g_CurrentPair].ticker+'</th>'))
+    $('#id_sell_orders_header').append($('<th>' + price + '</th><th>'+coinNameToTicker[utils.MAIN_COIN].ticker+'</th><th>'+coinNameToTicker[g_CurrentPair].ticker+'</th>'))
   }
   
   UpdateBuySellTickers();
@@ -530,12 +537,15 @@ function UpdatePairData(message)
   if (message.data.historyUser)
     UpdateTradeHistoryUser(message.data.historyUser);
     
-  let chatHeader = "<span>Chat</span>";
+  const chatText = $("#chat-text").html(),
+    onlineText = $("#online-text").html(),
+    registeredText = $("#registered-text").html()
+  let chatHeader = "<span>" + chatText + "</span>";
   if (message.data.online != undefined)
-    chatHeader = '<span>Online: </span><strong>'+message.data.online+'</strong>';
+    chatHeader = '<span>' + onlineText + ': </span><strong>'+message.data.online+'</strong>';
     //$('#id_chat_header').html('<span>Online: </span><strong>'+message.data.online+'</strong>')
   if (message.data.allusers != undefined && message.data.allusers > 0)
-    chatHeader = '<span>Online: </span><strong>'+message.data.online+'</strong>&nbsp&nbsp(Registered: '+ message.data.allusers +')';
+    chatHeader = '<span>' + onlineText + ': </span><strong>'+message.data.online+'</strong>&nbsp&nbsp(' + registeredText + ': '+ message.data.allusers +')';
     
   $('#id_chat_header').html(chatHeader);
 }
@@ -554,6 +564,7 @@ function UpdateTradeHistory(history)
       continue;
       
     history[i].buysell = history[i].buysell == 'sell' ? 'buy' : 'sell';
+    history[i].text = history[i].buysell == 'sell' ? buyText : sellText;
     
     const typeColor = history[i].buysell == 'sell' ? "text-danger" : "text-success";
     
@@ -561,7 +572,7 @@ function UpdateTradeHistory(history)
     const price = utils.MakePrice((history[i].fromBuyerToSeller/history[i].volume).toFixed(7));
     const tr = $('<tr></tr>')
       .append($('<td>'+utils.timeConverter(history[i].time*1)+'</td>'))
-      .append($('<td><span class="'+typeColor+'">'+history[i].buysell+'</span></td>'))
+      .append($('<td><span class="'+typeColor+'">'+history[i].text +'</span></td>'))
       .append($('<td>'+volume+'</td>'))
       .append($('<td>'+price+'</td>'));
 //      .append($('<td>'+(history[i].volume*1).toFixed(8)*1+'</td>'))
@@ -584,7 +595,7 @@ function UpdateTradeHistoryUser(history)
     const typeColor = history[i].buysell == 'sell' ? "text-danger" : "text-success";
     const tr = $('<tr></tr>')
       .append($('<td>'+utils.timeConverter(history[i].time*1)+'</td>'))
-      .append($('<td><span class="'+typeColor+'">'+history[i].buysell+'</span></td>'))
+      .append($('<td><span class="'+typeColor+'">'+history[i].buysell == "sell" ? sellText : buyText+'</span></td>'))
       .append($('<td>'+(history[i].volume*1).toFixed(7)*1+'</td>'))
       .append($('<td>'+(history[i].fromBuyerToSeller/history[i].volume).toFixed(7)*1+'</td>'));
     
@@ -720,8 +731,10 @@ function UpdateUserOrders(userOrders)
       continue;
       
     const orderID = userOrders[i].id;
+
+    userOrders[i].text = userOrders[i].buysell == "sell" ? sellingText : buyingText
     
-    const close = $('<button type="button" class="btn btn-primary btn-sm">Close</button>').on('click', e => {
+    const close = $('<button type="button" class="btn btn-primary btn-sm">' + closeText + '</button>').on('click', e => {
       $('#loader').show();
       $("html, body").animate({ scrollTop: 0 }, "slow");
       $.post( "/closeorder", {orderID: orderID}, function( data ) {
@@ -739,7 +752,7 @@ function UpdateUserOrders(userOrders)
     const typeColor = userOrders[i].buysell == 'sell' ? "text-danger" : "text-success";
     const tr = $('<tr></tr>')
       .append($('<td>'+utils.timeConverter(userOrders[i].time*1)+'</td>'))
-      .append($('<td><span class="'+typeColor+'">'+userOrders[i].buysell+'</span></td>'))
+      .append($('<td><span class="'+typeColor+'">'+userOrders[i].text +'</span></td>'))
       .append($('<td>'+(userOrders[i].amount*1).toFixed(8)*1+' '+coinNameToTicker[g_CurrentPair].ticker+'</td>'))
       .append($('<td>'+(userOrders[i].price*1).toFixed(8)*1+" "+coinNameToTicker[utils.MAIN_COIN].ticker+'</td>'))
       .append($('<td></td>').append(close));

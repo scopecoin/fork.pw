@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light static-top bg-light">
     <div class="container" style="max-width: 90%;">
         <a class="navbar-brand" href="/">
-            <img  height="30" border="0" align="center"  src="/OpenTrade6.png"/>
+            <img  height="30" border="0" align="center"  src="/anchor.png"/>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,25 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/"><%-__('Trade')%></a>
+              <a class="nav-link logo-text" href="/">ForkoFranko – <%-__("free Crypto Market")%></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" target="_blank" href="https://mc-ex.multicoins.org"><%-__('Exchange')%></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" target="_blank" href="https://mc-dice.multicoins.org"><%-__('DICE')%></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" target="_blank" href="http://mc-faucet.multicoins.org"><%-__('Faucet')%></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" target="_blank" href="https://forum.marycoin.org/"><%-__('Forum')%></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/API">API</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/add_coin">Add coin</a>
+              
             </li>
         </ul>
         </div>
@@ -35,15 +20,6 @@
             <% var key = ''; try{if (status.active) key = status.token || '';}catch(e){}%>
             <% if (!key.length) {%><% include ../partials/nav_not_logged %><% }%>
             <% if (key.length) {%><%  include ../partials/nav_logged %><% }%>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span ><%-__('Help')%></span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/support"><%-__('Support')%></a>
-                  <a class="dropdown-item" href="/fees"><%-__('Fees')%></a>
-                </div>
-            </li>
         </ul>
         
         <button type="button" id='id-button-lang-en' class="btn btn-outline-success btn-sm m-1">EN</button>
