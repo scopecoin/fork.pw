@@ -120,6 +120,30 @@ exports.object = {
     "<b>Withdraw almost done!</b> Check your email for the further instructions.": [
         "<b>Withdraw almost done!</b> Check your email for the further instructions.",
         "<b>Вывод почти окончен!</b> Проверте Вашу почту для получения следующих инструкций."
+    ],
+    "Please check your E-mail for further instructions": [
+        "Please check your E-mail for further instructions",
+        "Пожалуйста, проверьте почтовый ящик для продолжения"
+    ],
+    "Almost done": [
+        "Almost done",
+        "Почти готово"
+    ],
+    "Registration confirmed": [
+        "Registration confirmed",
+        "Регистрация завершена"
+    ],
+    "You can": [
+        "You can",
+        "Вы можете"
+    ],
+    "login": [
+        "login",
+        "войти"
+    ],
+    "now": [
+        "now",
+        "сейчас"
     ]
 
     }
