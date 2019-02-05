@@ -2,7 +2,7 @@
 
 const SUPPORT_EMAIL = 'support@fork.pw';
 const NOREPLY_EMAIL = 'mailer@fork.pw';
-const DOMAIN = 'localhost';
+const DOMAIN = 'fork.pw';
 
 const MAILER_NAME = 'ForkoFranko';
 const START_MESSAGE = 'ForkoFranko started!';
