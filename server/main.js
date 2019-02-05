@@ -76,7 +76,8 @@ httpsListener.on('connection', function(socket) {
 //httpListener.on('error', () => {});
 //httpsListener.on('error', () => {});
 
-g_constants.WEB_SOCKETS = new WebSocketServer({ server: httpsServer, clientTracking: true });
+// g_constants.WEB_SOCKETS = new WebSocketServer({ server: httpsServer, clientTracking: true });
+g_constants.WEB_SOCKETS = new WebSocketServer({ server: httpServer, clientTracking: true });
 
 function noop() {}
  

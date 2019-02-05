@@ -165,7 +165,7 @@ const utils =
     {
         // socket = new WebSocket("wss://"+window.location.hostname+":"+PORT_SSL);
 //        socket = new WebSocket("wss://"+window.location.hostname);
-        socket = new WebSocket("ws://" + location.hostname)
+        socket = new WebSocket("ws://" + location.hostname + ":" + location.port)
         socket.onmessage = onmessage;
         socket.onopen = onopen;
         
