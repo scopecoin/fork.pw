@@ -103,6 +103,15 @@ exports.object = {
         "Withdraw your": ["Withdraw your", "Вывод ваших"],
         "Technical work is carried out. Please be patient. Trading enabled. Withdraw is temporarily disabled":
         ["Technical work is carried out. Please be patient. Trading enabled. Withdraw is temporarily disabled",
-        "Проводятся технические работы. Торговля разрешена. Вывод средств временно приостановлен"]
+        "Проводятся технические работы. Торговля разрешена. Вывод средств временно приостановлен"],
+        "Register a new account": ["Register a new account", "Регистрация пользователя"],
+        "Password": ["Password", "Пароль"],
+        "Password (again)": ["Password (again)", "Проверка пароля"],
+        "Some providers may to block emails": ["Some providers may to block emails", "Некоторые сервисы могут блокировать наши письма"],
+        "Register": ["Register", "Регистрация"],
+        "Already have an account": ["Already have an account", "Уже есть учетная запись"],
+        "Forgot password": ["Forgot password", "Забыли пароль"],
+        "Reset your password": ["Reset your password", "Сброс пароля"]
+
     }
 };

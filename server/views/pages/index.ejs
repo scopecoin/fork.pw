@@ -11,7 +11,7 @@
       <% include ../partials/alerts %>
       <input id='id_token' type='hidden' <% var value = ''; try{if (status.token) value = "value='"+status.token+"'"}catch(e){} %> <%- value %>>
       <div class='row'>
-        <div class="col-md-2 p-1">
+        <div class="col-md-2 p-2">
           <div class="card">
             <div class="card-header">
               <%-__('Market')%>
@@ -37,17 +37,16 @@
             </div>
           </div>
         </div>
-        <div class='col-md-7 pl-1.4'>
-          <div class='container-fluid p-1'>
-            <div class='row p-0'>
-              <iframe frameBorder="0" scrolling='no' style='height: 370px;' class="col-md-12" src='../chart.html'></iframe>
-            </div>
-          </div>
+        <div class='col-md-7 p-2'>
+
+
+              <iframe frameBorder="0" scrolling='no' style='height: 370px; width: 100%; margin-top: 2px' class="-col-md-12" src='../chart.html'></iframe>
+
           <!--<div class="embed-responsive" style='padding-top: 75%' >
             <iframe style='height: 500px;' scrolling='no' class="embed-responsive-item" src='../chart.html'></iframe>
           </div>-->
         </div>
-        <div class="col-md-3 p-1">
+        <div class="col-md-3 p-2">
           <div class="card">
             <div id='id_chat_header' class="card-header">
               Chat
@@ -74,7 +73,7 @@
       </div>
 
       <div class='row'>
-        <div class="col-md-3 p-1">
+        <div class="col-md-3 p-2">
           <div class="card">
             <div id='header_buy' class="card-header">
               
@@ -157,7 +156,7 @@
             </div>
           </div>          
         </div>
-        <div class="col-md-3 p-1">
+        <div class="col-md-3 p-2">
           <div class="card">
                   <div id='header_sell' class="card-header">
                     
@@ -239,7 +238,7 @@
                   </div>
                 </div>          
         </div>
-        <div class="col-md-6 p-1">
+        <div class="col-md-6 p-2">
           <div class="card">
            <!-- <div class="card-header">
               Your active orders:
@@ -291,7 +290,7 @@
         </div>
       </div>
       <div class='row'>
-        <div class="col-md-3 p-1">
+        <div class="col-md-3 p-2">
             <div class="card">
               <div class="card-header p-0">
                 <table class='table table-orders m-0'>
@@ -314,7 +313,7 @@
               </div>
             </div>          
           </div>
-        <div class="col-md-3 p-1">
+        <div class="col-md-3 p-2">
             <div class="card">
               <div class="card-header p-0">
                 <table class='table table-orders m-0'>
@@ -337,7 +336,7 @@
               </div>
             </div> 
           </div>
-        <div class="col-md-6 p-1">
+        <div class="col-md-6 p-2">
             <div class="card">
              <!-- <div class="card-header">
                 Trade history:
