@@ -971,8 +971,8 @@ function Withdraw(currency, quantity, address, callback) {
     "result": true, 
     "success":1,
     "return":{
-        "coupon":"OT-2-1-0.01-1532875173145-f4f1b216f09507d6d987bhvgfbfc85ef36d0ba236e0983gslkjn196dafa9648",
-        "funds":{"MC":430.4460447}
+        "coupon":"FF-2-1-0.01-1532875173145-f4f1b216f09507d6d987bhvgfbfc85ef36d0ba236e0983gslkjn196dafa9648",
+        "funds":{"XSCP":430.4460447}
     }
 }                    
                     </pre>
@@ -1058,7 +1058,7 @@ function Create(currency, quantity, callback) {
 const API_PUB_KEY = "__YOUR_API_PUBLIC_KEY__";
 const API_PRIV_KEY = "__YOUR_API_PRIVATE_KEY__";
 
-Close("OT-2-1-0.01-1532875173145-f4f1b216f09507bsld587ygsek7fc88903tydfsjk36e7c8633196dafa9648", ret => { console.log(JSON.stringify(ret));}
+Close("FF-2-1-0.01-1532875173145-f4f1b216f09507bsld587ygsek7fc88903tydfsjk36e7c8633196dafa9648", ret => { console.log(JSON.stringify(ret));}
 
 function Close(coupon, callback) {
     const nonce = Date.now()+Math.floor(Math.random() * (1000)) + 1;

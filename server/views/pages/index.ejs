@@ -8,6 +8,8 @@
 
 
     <div class="container-fluid pt-2">
+      <div class="row">
+        <div class="col-md-12">
       <% include ../partials/alerts %>
       <input id='id_token' type='hidden' <% var value = ''; try{if (status.token) value = "value='"+status.token+"'"}catch(e){} %> <%- value %>>
       <div class='row'>
@@ -386,5 +388,20 @@
 
     <% include ../partials/footer %>
     <script src='/js/index.js'></script>
+    <!-- Start of Emojics Code -->
+<!-- <div id="emojics-root"></div>
+<script>
+  window.emojicsOpts = {
+	widget: '1e158afa92a72c03658f18ef4becbe'
+  };
+  (function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	js = d.createElement(s);
+	js.id = id;
+	js.src = "//connect.emojics.com/dist/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
+  })(document, "script", "emojics-js");
+</script> -->
+<!-- End of Emojics Code -->
   </body>
 </html>

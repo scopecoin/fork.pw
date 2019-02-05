@@ -17,12 +17,12 @@
     <input id='id_server_message_fail' type='hidden' value="<%= escape(messageFail) %>">
     <input id='id_coupon' type='hidden' value="<%= coupon %>">
 
-    <div class="container pt-2">
+    <div class="container-fluid">
         <% include ../../partials/alerts %>
-        <h2><%-__("Wallet")%></h2>
-        <div class='container'>
+        
             <div class='row'>
-                <div class="offset2 col-md-12">
+                <div class="col-md-12">
+                        <h2 class="my-4"><%-__("Wallet")%></h2>
                     <div class="card">
                         <div class="card-header">
                             <%-__("Balance")%>
@@ -45,9 +45,25 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12 text-center mt-5">
+                    <div class="fiat-deposit p-3 m-3 d-inline-block disabled">
+                        <img class="" src="/privat24.png" />
+                    </div>
+                    <div class="fiat-deposit p-3 m-3 d-inline-block">
+                            <img src="/qiwi.png" />
+                        </div>
+                        <div class="fiat-deposit p-3 m-3 d-inline-block disabled">
+                                <img class="" src="/yandex.png" />
+                            </div>
+                            <div class="fiat-deposit p-3 m-3 d-inline-block">
+                                    <img src="/sberbank.png" />
+                                </div>
+                </div>
+            </div>
             <div class='row justify-content-md-center'>
                 <div class='col-md-12 text-center mt-3'>
-                    <div class="lds-facebook"><div></div><div></div><div></div></div>
+                    <div id="ballsWaveG" class="lds-facebook"><div></div><div></div><div></div></div>
                     <!-- <div id="ballsWaveG">
                     	<div id="ballsWaveG_1" class="ballsWaveG"></div>
                     	<div id="ballsWaveG_2" class="ballsWaveG"></div>
@@ -60,7 +76,6 @@
                     </div>                     -->
                 </div>
             </div>
-        </div>
     </div> <!-- /container -->
 
     <div style="display:none">

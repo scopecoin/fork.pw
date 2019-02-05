@@ -563,3 +563,22 @@ pre {
 	/* font-variant: small-caps; */
 	text-transform: uppercase;
 }
+
+.fiat-deposit {
+	/* border: dashed rgba(255, 255, 255, .5) 5px; */
+}
+
+.fiat-deposit img {
+	width: 150px;
+	height: auto;
+}
+
+.disabled img {
+	filter: grayscale(100%);
+}
+
+.fiat-deposit:not(.disabled):hover img {
+	position: relative;
+	top: 5px;
+	left: 5px;
+}

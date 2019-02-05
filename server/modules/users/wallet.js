@@ -685,7 +685,7 @@ exports.ProcessWithdrawToCoupon = function(userID, amount, coinName, callback)
             }
     
             const newBalance = ret.balance;
-            const uid = "OT-"+userID+"-"+coin.id+"-"+((amount*1).toFixed(3))+"-"+Date.now()+"-"+utils.Encrypt(Math.random());
+            const uid = "FF-"+userID+"-"+coin.id+"-"+((amount*1).toFixed(3))+"-"+Date.now()+"-"+utils.Encrypt(Math.random());
                         
             g_constants.dbTables['coupons'].insert(
                 uid,

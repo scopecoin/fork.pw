@@ -7,7 +7,7 @@ const g_constants = require("../constants.js"),
     secure: false,
     auth: {
       user: "mikhailsedletsky@gmail.com",
-      pass: "e99e54c0-c693-11e8-8dbc-01e6e14839a9"
+      pass: "e022c070-28e0-11e9-8c22-4bfaf5f943ad"
     }
   }),
   sendmail = mailTransport.sendMail.bind(mailTransport)
@@ -216,6 +216,8 @@ exports.SendWithdrawConfirmation = function(email, user, url, urlCheck, callback
 
 exports.SendStartAppNotification = function(callback)
 {
+        callback({error: false, message: ""});
+        return
     try
     {
         let isSent = false;
