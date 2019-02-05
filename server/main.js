@@ -34,7 +34,9 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(g_constants.SSL_options, app);
 
-var httpListener = httpServer.listen(g_constants.my_port, "0.0.0.0");
+var httpListener = httpServer.listen(g_constants.my_port, "0.0.0.0", function() {
+    console.log(`HTTP listen on port ${g_constants.my_port}`)
+});
 var httpsListener = httpsServer.listen(g_constants.share.my_portSSL, "0.0.0.0", function(){
     console.log("SSL Proxy listening on port "+g_constants.share.my_portSSL);
 });

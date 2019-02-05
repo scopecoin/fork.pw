@@ -509,7 +509,8 @@ pre {
 
   .logo-text {
 	  color: rgba(255, 255, 255, .5) !important;
-	  font-variant: small-caps;
+	  /* font-variant: small-caps; */
+	  text-transform: uppercase;
 	  font-size: 16px;
   }
 
@@ -571,14 +572,18 @@ pre {
 .fiat-deposit img {
 	width: 150px;
 	height: auto;
+	opacity: 0.25;		
+	transition: opacity 1s;
 }
 
 .disabled img {
 	filter: grayscale(100%);
 }
 
+.fiat-deposit:not(.disabled) img {
+	cursor: pointer;
+}
+
 .fiat-deposit:not(.disabled):hover img {
-	position: relative;
-	top: 5px;
-	left: 5px;
+	opacity: 1;
 }
