@@ -558,4 +558,8 @@ pre {
 		  height: 26px;
 		}
 	  }
-	  
+
+.action-button {
+	/* font-variant: small-caps; */
+	text-transform: uppercase;
+}

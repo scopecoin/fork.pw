@@ -111,7 +111,12 @@ exports.object = {
         "Register": ["Register", "Регистрация"],
         "Already have an account": ["Already have an account", "Уже есть учетная запись"],
         "Forgot password": ["Forgot password", "Забыли пароль"],
-        "Reset your password": ["Reset your password", "Сброс пароля"]
+        "Reset your password": ["Reset your password", "Сброс пароля"],
+        "Listing Request": ["Listing Request", "Листинг проекта"],
+        "We only accept Bitcoin based altcoins. Cryptonote and Zcash forks and Ethereum tokens are currently not accepted":
+        ["We only accept Bitcoin based altcoins. Cryptonote and Zcash forks and Ethereum tokens are currently not accepted",
+            "Мы принимаем только основанные на коде Биткойн проекты. Криптонот и Zcash форки как и токены Эфириума пока-что не поддерживаются"],
+    "Contact us on Telegram": ["Contact us on Telegram", "Свяжитесь с нами в Телеграм"]
 
     }
 };
