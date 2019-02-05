@@ -1,10 +1,10 @@
 'use strict';
 
-const SUPPORT_EMAIL = 'support@email.com';
-const NOREPLY_EMAIL = 'no-reply@email.com';
+const SUPPORT_EMAIL = 'support@fork.pw';
+const NOREPLY_EMAIL = 'mailer@fork.pw';
 const DOMAIN = 'localhost';
 
-const MAILER_NAME = 'ForkoFranko Mailer';
+const MAILER_NAME = 'ForkoFranko';
 const START_MESSAGE = 'ForkoFranko started!';
 const OPENTRADE = "ForkoFranko";
 

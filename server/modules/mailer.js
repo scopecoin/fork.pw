@@ -1,16 +1,8 @@
 'use strict';
 
-const g_constants = require("../constants.js"),
-  mailTransport = require("nodemailer").createTransport({
-    host: "debugmail.io",
-    port: 25,
-    secure: false,
-    auth: {
-      user: "mikhailsedletsky@gmail.com",
-      pass: "e022c070-28e0-11e9-8c22-4bfaf5f943ad"
-    }
-  }),
-  sendmail = mailTransport.sendMail.bind(mailTransport)
+const g_constants = require("../constants.js")
+const sendgrid = require("@sendgrid/mail")
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
 exports.SendPIN = function(email, user, pin, callback)
 {
@@ -27,9 +19,8 @@ exports.SendPIN = function(email, user, pin, callback)
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
+            from: g_constants.NOREPLY_EMAIL,
             to: unescape(email),
             subject: subject,
             html: body,
@@ -70,9 +61,8 @@ exports.SendSignupConfirmation = function(email, url, urlCheck, callback)
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
+            from: g_constants.NOREPLY_EMAIL,
             to: unescape(email),
             subject: subject,
             html: body,
@@ -116,7 +106,7 @@ exports.SendPasswordResetConfirmation = function(email, user, url, urlCheck, cal
     {
         let isSent = false;
         sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
+            from: g_constants.NOREPLY_EMAIL,
             to: unescape(email),
             subject: subject,
             html: body,
@@ -146,11 +136,9 @@ exports.SendTicket = function(ticket, callback)
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
+            from: g_constants.NOREPLY_EMAIL,
             to: g_constants.SUPPORT_EMAIL,
-            replyTo: unescape(ticket.email),
             subject: g_constants.MAILER_NAME+' Ticket #'+ticket.id+": "+unescape(ticket.subject),
             html: unescape(ticket.message),
         }, 
@@ -189,10 +177,9 @@ exports.SendWithdrawConfirmation = function(email, user, url, urlCheck, callback
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
             to: unescape(email),
+            from: g_constants.NOREPLY_EMAIL,
             subject: subject,
             html: body,
         }, 
@@ -221,11 +208,11 @@ exports.SendStartAppNotification = function(callback)
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
+            from: g_constants.SUPPORT_EMAIL,
+            //sender: g_constants.NOREPLY_EMAIL,
             to: g_constants.SUPPORT_EMAIL,
-            replyTo: unescape(g_constants.NOREPLY_EMAIL),
+            // replyTo: unescape(g_constants.NOREPLY_EMAIL),
             subject: g_constants.MAILER_NAME+' process starting notification email',
             html: unescape(g_constants.START_MESSAGE),
         }, 
@@ -251,11 +238,10 @@ exports.SendAdminNotify = function(message, callback)
     try
     {
         let isSent = false;
-        sendmail({
-            from: g_constants.OPENTRADE+' Mailer <'+g_constants.NOREPLY_EMAIL+'>',
-            sender: g_constants.NOREPLY_EMAIL,
+        sendgrid.send({
+            from: g_constants.NOREPLY_EMAIL,
             to: g_constants.SUPPORT_EMAIL,
-            replyTo: unescape(g_constants.NOREPLY_EMAIL),
+            // replyTo: unescape(g_constants.NOREPLY_EMAIL),
             subject: g_constants.MAILER_NAME+' Admin activity notification email',
             html: unescape(message),
         }, 

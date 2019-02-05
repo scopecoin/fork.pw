@@ -116,7 +116,11 @@ exports.object = {
         "We only accept Bitcoin based altcoins. Cryptonote and Zcash forks and Ethereum tokens are currently not accepted":
         ["We only accept Bitcoin based altcoins. Cryptonote and Zcash forks and Ethereum tokens are currently not accepted",
             "Мы принимаем только основанные на коде Биткойн проекты. Криптонот и Zcash форки как и токены Эфириума пока-что не поддерживаются"],
-    "Contact us on Telegram": ["Contact us on Telegram", "Свяжитесь с нами в Телеграм"]
+    "Contact us on Telegram": ["Contact us on Telegram", "Свяжитесь с нами в Телеграм"],
+    "<b>Withdraw almost done!</b> Check your email for the further instructions.": [
+        "<b>Withdraw almost done!</b> Check your email for the further instructions.",
+        "<b>Вывод почти окончен!</b> Проверте Вашу почту для получения следующих инструкций."
+    ]
 
     }
 };

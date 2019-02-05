@@ -284,7 +284,10 @@ function ShowWithdrawDialog(coin, coinID, coinTicker)
             if (data.result != true)
               return utils.alert_fail(data.message);
 
-            utils.alert_success("<b>Withdraw almost done!</b> Check your email for the further instructions.");
+
+            const withdrawAlmosDoneText = $("#withdraw-almost-done").text()
+
+            utils.alert_success(withdrawAlmosDoneText);
             //modals.OKCancel('Warning', "<div><h3>Almost done!</h3> Check your email for the further instructions.</div>", () => {$('#loader').hide();});
           }, "json" );
         });

@@ -7,6 +7,7 @@
     "url": "https://github.com/scopecoin/fork.pw.git"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "cors": "^2.8.5",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

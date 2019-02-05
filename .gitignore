@@ -17,3 +17,4 @@ node_modules/
 *.log
 *.py
 *.out
+sendgrid.env
